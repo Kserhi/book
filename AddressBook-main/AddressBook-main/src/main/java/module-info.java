@@ -8,4 +8,8 @@ module com.example.addressbook {
 
     opens com.example.addressbook to javafx.fxml;
     exports com.example.addressbook;
+    exports com.example.addressbook.book;
+    opens com.example.addressbook.book to javafx.fxml;
+    exports com.example.addressbook.person;
+    opens com.example.addressbook.person to javafx.fxml;
 }

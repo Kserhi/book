@@ -1,5 +1,6 @@
 package com.example.addressbook;
 
+import com.example.addressbook.book.CollectionAddressBook;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -15,9 +16,15 @@ public class HelloApplication extends Application {
         stage.setTitle("Адресна книга");
         stage.setScene(scene);
         stage.show();
-    }
 
+    }
+//    private void testData() {
+//        CollectionAddressBook addressBook = new CollectionAddressBook();
+//        addressBook.fillTestData();
+//        addressBook.print();
+//    }
     public static void main(String[] args) {
+
         launch();
     }
 
