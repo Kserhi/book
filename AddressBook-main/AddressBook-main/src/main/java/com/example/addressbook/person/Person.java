@@ -1,27 +1,48 @@
 package com.example.addressbook.person;
 
+import javafx.beans.property.SimpleStringProperty;
+
 public class Person {
-    private String name;
-    private String phone;
+    private SimpleStringProperty name = new SimpleStringProperty("");
+    private SimpleStringProperty phone = new SimpleStringProperty("");
 
-    public Person(String name, String phone) {
-        this.name = name;
-        this.phone = phone;
+    public Person(String pip, String phone) {
+        this.name = new SimpleStringProperty(pip);
+        this.phone = new SimpleStringProperty(phone);
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
 
     public String getName() {
+        return name.get();
+    }
+
+    public SimpleStringProperty nameProperty() {
         return name;
     }
 
+    public void setName(String name) {
+        this.name.set(name);
+    }
+
     public String getPhone() {
+        return phone.get();
+    }
+
+    public SimpleStringProperty phoneProperty() {
         return phone;
     }
+
+    public void setPhone(String phone) {
+        this.phone.set(phone);
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "pip=" + name +
+                ", phone=" + phone +
+                '}';
+    }
+
 }
+
