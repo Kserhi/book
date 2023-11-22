@@ -5,6 +5,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CollectionAddressBook implements AdressBook{
 
@@ -34,16 +35,34 @@ public class CollectionAddressBook implements AdressBook{
     }
 
     @Override
-   public void  add (Person person){
+    public void add(Person person) { personList.add(person);
 
     }
     @Override
     public void  delete(Person person){
-
+        personList.remove(person);
     }
 
     @Override
     public void updata(Person person) {
 
+
     }
+
+
+    public ObservableList<Person> search(String searchTerm) {
+        ObservableList<Person> searchResults = FXCollections.observableArrayList();
+
+        for (Person person : personList) {
+            if (person.getName().toLowerCase().contains(searchTerm.toLowerCase()) ||
+                    person.getPhone().toLowerCase().contains(searchTerm.toLowerCase())) {
+                searchResults.add(person);
+            }
+        }
+
+        return searchResults;
+    }
+
+
+
 }

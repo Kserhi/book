@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.geometry.*?>
 
-<AnchorPane
-        prefHeight="500.0"
-        prefWidth="600.0"
-        style="-fx-background-color: #FAFF0D;"
-        xmlns="http://javafx.com/javafx/8"
-        xmlns:fx="http://javafx.com/fxml/1"
-        fx:controller="com.example.addressbook.Controller">
+<AnchorPane prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: #FAFF0D;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.addressbook.Controller">
 
     <children>
         <HBox prefHeight="80.0" prefWidth="540.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="0.0">
@@ -22,13 +16,13 @@
                     </HBox.margin>
                 </Button>
 
-                <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #FEC351;" text="Редагувати">
+                <Button mnemonicParsing="false" fx:id="bthEdit"  onAction="#onEditButtonClick" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #FEC351;" text="Редагувати">
                     <HBox.margin>
                         <Insets left="75.0" right="75.0" top="30.0" />
                     </HBox.margin>
                 </Button>
 
-                <Button fx:id="btnDelete" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #FEC351;" text="Видалити">
+                <Button fx:id="bthDelete" mnemonicParsing="false" onAction="#onDeleteButtonClick" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #FEC351;" text="Видалити">
                     <HBox.margin>
                         <Insets top="30.0" />
                     </HBox.margin>
@@ -38,9 +32,9 @@
 
         <AnchorPane layoutX="7.0" layoutY="120.0" prefHeight="50.0" prefWidth="600.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="100.0">
             <children>
-                <TextField layoutY="7.0" prefHeight="40.0" prefWidth="383.0" promptText="Дані про користувача" style="-fx-background-color: #D9D9D9;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="157.0" />
+                <TextField fx:id="txtSearch" layoutY="7.0" onAction="#exitApplication" prefHeight="40.0" prefWidth="383.0" promptText="Дані про користувача" style="-fx-background-color: #D9D9D9;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="157.0" />
 
-                <Button layoutX="460.0" layoutY="7.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #FEC351;" text="Пошук" AnchorPane.rightAnchor="0.0" />
+                <Button fx:id="bthSearch" layoutX="460.0" layoutY="7.0" mnemonicParsing="false" onAction="#onSearchButtonClick" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #FEC351;" text="Пошук" AnchorPane.rightAnchor="0.0" />
             </children>
         </AnchorPane>
 
@@ -63,8 +57,8 @@
         <AnchorPane layoutX="14.0" layoutY="439.0" prefHeight="70.0" prefWidth="540.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
             <children>
                 <Label fx:id="labelCount" layoutY="27.0" prefHeight="17.0" prefWidth="157.0" AnchorPane.leftAnchor="0.0" />
-            <Button fx:id="btnOther" layoutX="501.0" layoutY="15.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="68.0" style="-fx-background-color: #FEC351;" text="Вихід" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="0.0" />
-            <Button fx:id="btnOther1" layoutX="352.0" layoutY="15.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #FEC351;" text="Інші практичні" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="83.0" />
+            <Button fx:id="exitButton" layoutX="501.0" layoutY="15.0" mnemonicParsing="false" onAction="#exitApplication" prefHeight="40.0" prefWidth="68.0" style="-fx-background-color: #FEC351;" text="Вихід" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="0.0" />
+            <Button fx:id="btnOtherLabs" onAction="#nextLab" layoutX="352.0" layoutY="15.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #FEC351;" text="Інші практичні" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="83.0" />
             </children>
         </AnchorPane>
     </children>
