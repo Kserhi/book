@@ -1,14 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.addressbook.Lab_rob6"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.addressbook.Lab_rob6">
+   <children>
+      <VBox layoutX="14.0" layoutY="12.0" prefHeight="376.0" prefWidth="250.0">
+         <children>
+            <Label text="CheckBox" />
+            <Label layoutX="10.0" layoutY="10.0" prefHeight="43.0" prefWidth="383.0" text="Властивість людино-машиного інтерфейсу" />
+            <CheckBox fx:id="btnPohod" mnemonicParsing="false" text="Погодженість" />
+            <CheckBox fx:id="btnDryz" mnemonicParsing="false" text="Дружність " />
+            <CheckBox fx:id="btnHnysh" mnemonicParsing="false" text="Гнучкість" />
+            <CheckBox fx:id="btnSklad" mnemonicParsing="false" text="Складність " />
+            <Button fx:id="btnAnswer" mnemonicParsing="false" onAction="#checkBoxAnswer" text="Відповісти" />
+            <Label fx:id="idTrueAnswer" layoutX="10.0" layoutY="10.0" text="Lable" />
+         </children>
+      </VBox>
+      <VBox layoutX="264.0" layoutY="12.0" prefHeight="376.0" prefWidth="162.0">
+         <children>
+            <Label text="ChoiceBox" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Пес Патрон живий?" />
+            <ChoiceBox fx:id="choiceB" prefWidth="150.0" />
+            <Button fx:id="btnAnwerChoice" mnemonicParsing="false" onAction="#choiceBoxAnswer" text="відповісти" />
+            <Label fx:id="lblAnwerChoice" layoutX="10.0" layoutY="10.0" text="Label" />
+         </children>
+      </VBox>
+      <VBox layoutX="426.0" layoutY="12.0" prefHeight="376.0" prefWidth="162.0">
+         <children>
+            <Label text="ComboBox" />
+            <ComboBox fx:id="comboBox" onAction="#comboBoxPressed" prefWidth="150.0" />
+            <Label fx:id="lblAnwerCombo" text="Label" />
+         </children>
+      </VBox>
+      <VBox layoutX="588.0" layoutY="12.0" prefHeight="376.0" prefWidth="162.0">
+         <children>
+            <Label text="RadioButton" />
+            <RadioButton fx:id="radioProp" mnemonicParsing="false" onAction="#RadioAnswer" text="Properties" />
+            <RadioButton fx:id="radioLay" layoutX="10.0" layoutY="27.0" mnemonicParsing="false" onAction="#RadioAnswer" text="Layout" />
+            <RadioButton fx:id="radioCode" layoutX="10.0" layoutY="27.0" mnemonicParsing="false" onAction="#RadioAnswer" text="Code" />
+            <RadioButton fx:id="radioHier" layoutX="10.0" layoutY="27.0" mnemonicParsing="false" onAction="#RadioAnswer" text="Hiererae" />
+            <Label fx:id="lblRadio" text="Label" />
+            <Button fx:id="nextLab" mnemonicParsing="false" onAction="#nextLab" text="nextLab" />
+         </children>
+      </VBox>
+   </children>
 </AnchorPane>
